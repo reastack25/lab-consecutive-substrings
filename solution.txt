@@ -3,30 +3,19 @@ And a written explanation of your solution
 
 ## solution
 ## pseudocode
-FUNCTION consecutiveSubstrings(string):
-    // Initialize empty array to store results
-    result = []
+function consecutiveSubstrings(string):
+    Initialize empty result array
     
-    // Outer loop: iterate through all possible starting positions
-    FOR i FROM 0 TO string.length - 1:
-        
-        // Inner loop: iterate through all possible ending positions starting from i
-        FOR j FROM i TO string.length - 1:
-            
-            // Extract substring from position i to position j (inclusive)
-            substring = string.slice(i, j + 1)
-            
-            // Add substring to results array
-            result.push(substring)
+    For each start index from 0 to string.length - 1:
+        For each end index from start index to string.length - 1:
+            Take substring from start to end (inclusive)
+            Add to result array
     
-    // Return array containing all consecutive substrings
-    RETURN result
-    \
-
+    Return result array
     // explatination to the solution
     The use of nested loops generate a start and end position combination.
     thus ensureing  all consecutive substrings are captured. The outer loop sets the starting point, while the inner loop extends to the end. 
-    This approach has O(n^2) (quadratic time) complexity due to substring creation across all positions.
+    This approach has O(n^3) (Cubic Complexity) complexity due to substring creation across all positions.
 
    ## Algorithm:
 The solution uses a two-pointer approach with nested loops:
